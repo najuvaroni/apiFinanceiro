@@ -1,0 +1,22 @@
+CREATE TABLE Receita (
+    id_receita INT AUTO_INCREMENT PRIMARY KEY,
+    descricao VARCHAR(100) NOT NULL,
+    valor FLOAT NOT NULL,
+    usuario_id INT NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES Usuario(id_usuario)
+);
+
+CREATE TABLE Despesa (
+    id_despesa INT AUTO_INCREMENT PRIMARY KEY,
+    descricao VARCHAR(100) NOT NULL,
+    valor FLOAT NOT NULL,
+    usuario_id INT NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES Usuario(id_usuario)
+);
+
+select * from receita;
+
+
+insert into usuario (id_usuario, email, senha_hash) 
+values(1, 'bianca@gmail', 'bianca'),
+      (2, 'loquete@gmail', 'loquete');
